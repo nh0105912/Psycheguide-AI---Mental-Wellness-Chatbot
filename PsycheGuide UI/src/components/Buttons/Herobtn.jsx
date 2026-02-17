@@ -1,7 +1,7 @@
 import React from 'react'
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { LuBookOpen } from "react-icons/lu";
-
+import { NavLink } from "react-router-dom";
 const Herobtn = ({getStarted ,explore}) => {
   return (
     <div>
