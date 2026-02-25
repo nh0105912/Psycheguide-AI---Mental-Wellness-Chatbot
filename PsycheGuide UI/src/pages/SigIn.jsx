@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo1.png";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -7,12 +8,13 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Sign In:", { email, password });
+    // console.log("Sign In:", { email, password });
   };
 
   return (
-    <div className="lg:h-[88vh] flex items-center justify-center bg-gray-100">
+    <div className="lg:h-[88vh] flex items-center justify-center bg-gradient-to-t from-cyan-500 to-blue-500">
       <div className="m-4 w-full max-w-md bg-white p-6 rounded-lg shadow-md">
+        <img src={logo} alt="logo" className="w-28 m-auto" />
         <h1 className="text-lg lg:text-2xl font-bold text-center mb-2 text-blue-600">
           Welcome Back to PsycheGuide
         </h1>

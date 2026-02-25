@@ -40,19 +40,24 @@ const COLORS = ["#06b6d4", "#22c55e", "#f97316"];
 
 const Dashboard = () => {
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="p-6 bg-cyan-50 min-h-screen">
       {/* Header */}
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">
-        PsycheGuide AI Dashboard
-      </h1>
+      <div className="mb-8 bg-cyan-200 p-6 rounded-xl shadow-sm border">
+        <p className="  rounded-3xl px-4 bg-cyan-300  text-gray-800 mb-6 inline-block text-sm font-medium">
+          PsycheGuide AI Dashboard
+        </p>
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <StatCard title="Total Sessions" value="128" />
-        <StatCard title="Mood Improvement" value="+32%" />
-        <StatCard title="Active Days" value="24" />
-        <StatCard title="Self-Care Tasks" value="18" />
+        <h1 className="text-4xl font-bold text-gray-700 mb-4">
+          Welcome back, Alex!
+        </h1>
+        <p className="text-gray-600 mb-6 w-2/3 text-lg">
+          This personalized wellness dashboard provides real-time progress
+          tracking, actionable insights, and AI-driven recommendations to help
+          you achieve and maintain your health goals efficiently.
+        </p>
       </div>
+
+      
 
       {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

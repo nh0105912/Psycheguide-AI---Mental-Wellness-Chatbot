@@ -8,8 +8,7 @@ const Herobtn = ({getStarted ,explore}) => {
          <div className="flex gap-4 mb-8">
                 <NavLink
                   to="/signin"
-                  className="shadow-lg
-                                 transform transition-transform duration-300 hover:scale-105 bg-cyan-500 hover:bg-cyan-800 py-2 px-2 lg:px-6 rounded-md text-md font-semibold text-white"
+                  className="shadow-lg transform transition-transform duration-300 hover:scale-105 bg-cyan-500 hover:bg-cyan-800 py-2 px-2 lg:px-6 rounded-md text-md font-semibold text-white"
                 >
                    {getStarted} {" "}
                   <IoIosArrowRoundForward className="inline-block text-2xl" />{" "}

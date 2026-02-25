@@ -9,11 +9,13 @@ import depression2 from "./assets/depresion2.jpg";
 import care from "./assets/care.jpg";
 import think from "./assets/think.jpg";
 import emotion from "./assets/emotion.jpg";
-
+// icons 
+import { IoChatbubblesOutline } from "react-icons/io5";
+import { LuBookOpen } from "react-icons/lu";
+import { AiOutlineSafety } from "react-icons/ai";
 
 
 export const resourcesData = [
-
   {
     id: 1,
     title: "Understanding and Managing Anxiety",
@@ -82,7 +84,6 @@ With practice, breathing becomes your inner anchor during emotional storms.
 `,
   },
 
-  
   {
     id: 3,
     title: "The Power of Mindful Breathing",
@@ -138,7 +139,6 @@ Remember:
 Clarity doesn't come from rushing — it comes from *pausing*.
 `,
   },
-
 
   {
     id: 5,
@@ -258,7 +258,6 @@ Small acts of self-care create big long-term change.
 `,
   },
 
- 
   {
     id: 11,
     title: "Grounding Techniques for Overthinking",
@@ -300,5 +299,23 @@ Write:
 
 There are no wrong words — only honest ones.
 `,
+  },
+];
+
+export const supportCard = [
+  {
+    icon: IoChatbubblesOutline,
+    title: "Compassionate AI Conversations",
+    para: "Engage with an AI trained to listen with empathy and provide thoughtful, supportive responses based on lived experience.",
+  },
+  {
+    icon: LuBookOpen,
+    title: "Resource Library",
+    para: "Access curated articles and guides on coping strategies, mindfulness, sleep, anxiety, depression, and self-care.",
+  },
+  {
+    icon: AiOutlineSafety,
+    title: "Safe & Confidential",
+    para: "Your conversations are private. We prioritize your emotional safety with a non-judgmental, supportive environment.",
   },
 ];

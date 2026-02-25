@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo1.png";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -13,7 +14,7 @@ const SignUp = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
@@ -21,16 +22,43 @@ const SignUp = () => {
       return;
     }
 
-    console.log("Sign Up:", formData);
+    try {
+      const res = await fetch("http://localhost:8000/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        // Save user info and token
+        localStorage.setItem("activeUserId", data.user.id);
+        localStorage.setItem("token", data.token);
+
+        alert("Account created successfully!");
+        window.location.href = "/chat"; // redirect to chat page
+      } else {
+        alert(data.message || "Signup failed");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Server error");
+    }
   };
 
   return (
-    <div className="relative lg:h-[88vh] flex items-center justify-center bg-gray-100">
+    <div className="relative lg:h-screen flex items-center justify-center bg-gradient-to-t from-cyan-500 to-blue-500">
       <div className="m-4 w-full max-w-md bg-white p-6 rounded-lg shadow-md">
-        <h1 className=" text-lg lg:text-2xl font-bold text-center mb-1 text-green-600">
+        <img src={logo} alt="logo" className="w-28 m-auto" />
+        <h1 className="text-lg lg:text-2xl font-bold text-center mb-1 text-blue-600">
           Create Your PsycheGuide Account
         </h1>
-        <p className="text-center text-sm lg:text-base text-blue-600 mb-6">
+        <p className="text-center text-sm lg:text-base text-green-700 mb-6">
           Join us and start your mental health journey
         </p>
 
@@ -75,7 +103,7 @@ const SignUp = () => {
             required
           />
 
-          <button className="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition">
+          <button className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">
             Create Account
           </button>
         </form>
