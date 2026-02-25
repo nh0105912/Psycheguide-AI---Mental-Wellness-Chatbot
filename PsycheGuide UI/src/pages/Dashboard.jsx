@@ -50,7 +50,7 @@ const Dashboard = () => {
         <h1 className="text-4xl font-bold text-gray-700 mb-4">
           Welcome back, Alex!
         </h1>
-        <p className="text-gray-600 mb-6 w-2/3 text-lg">
+        <p className="text-gray-600 mb-6 w-full lg:w-2/3 text-lg">
           This personalized wellness dashboard provides real-time progress
           tracking, actionable insights, and AI-driven recommendations to help
           you achieve and maintain your health goals efficiently.
